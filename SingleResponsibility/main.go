@@ -1,3 +1,9 @@
+/*
+	Definition:
+	The single-responsibility principle says that these two aspects of the problem are really two separate
+	responsibilities, and should therefore be in separate classes or modules
+*/
+
 package main
 
 import (
@@ -6,9 +12,9 @@ import (
 	"os"
 )
 
-/*----------------------------------------------------*/
-/*		BREAKING SINGLE RESPONSIBILITY PRINCIPLE	  */
-/*----------------------------------------------------*/
+/*--------------------------------------------------------*/
+/*		   BREAKING SINGLE RESPONSIBILITY PRINCIPLE	      */
+/*--------------------------------------------------------*/
 type AnimalBad struct {
 	Name string
 	Age  uint16
@@ -22,7 +28,7 @@ func (a AnimalBad) GetAge() uint16 {
 	return a.Age
 }
 
-// This is not responsibility of the Animal struct
+// formatJSON should not be responsibility of the Animal struct
 func (a AnimalBad) formatJSON() ([]byte, error) {
 	json, err := json.Marshal(a)
 	if err != nil {
@@ -32,9 +38,9 @@ func (a AnimalBad) formatJSON() ([]byte, error) {
 	return json, nil
 }
 
-/*--------------------------------------------------------*/
-/*		IMPLEMENTING SINGLE RESPONSIBILITY PRINCIPLE	  */
-/*--------------------------------------------------------*/
+/*------------------------------------------------------------*/
+/*		   IMPLEMENTING SINGLE RESPONSIBILITY PRINCIPLE	      */
+/*------------------------------------------------------------*/
 type AnimalGood struct {
 	Name string
 	Age  uint16
@@ -60,6 +66,7 @@ func (ToJSON) FormatJson(a *AnimalGood) ([]byte, error) {
 	return myJSON, nil
 }
 
+// Running main function
 func main() {
 	// Running a bad way
 	tiger := &AnimalBad{
