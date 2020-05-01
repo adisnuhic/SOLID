@@ -13,7 +13,7 @@ import (
 )
 
 /*--------------------------------------------------------*/
-/*		   BREAKING SINGLE RESPONSIBILITY PRINCIPLE	      */
+/*	  BREAKING SINGLE RESPONSIBILITY PRINCIPLE	  */
 /*--------------------------------------------------------*/
 type AnimalBad struct {
 	Name string
@@ -39,7 +39,7 @@ func (a AnimalBad) formatJSON() ([]byte, error) {
 }
 
 /*------------------------------------------------------------*/
-/*		   IMPLEMENTING SINGLE RESPONSIBILITY PRINCIPLE	      */
+/*	  IMPLEMENTING SINGLE RESPONSIBILITY PRINCIPLE	      */
 /*------------------------------------------------------------*/
 type AnimalGood struct {
 	Name string
