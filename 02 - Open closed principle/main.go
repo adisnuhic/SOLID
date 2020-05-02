@@ -22,6 +22,21 @@ func (c CalculatorBad) Calculate(a int, b int) int {
 	return a + b
 }
 
+// Commented Example below shows how we break this principle by modifying existing Calculate function
+/*
+func (c CalculatorBad) Calculate(a int, b int, operation string) int {
+	if operation == "add" {
+		return a + b
+	}
+
+	if operation == "minus" {
+		return a - b
+	}
+
+	panic("Operation does not exists!")
+}
+*/
+
 /*--------------------------------------------------------*/
 /*	     IMPLEMENTING OPEN/CLOSED PRINCIPLE	          */
 /*--------------------------------------------------------*/
