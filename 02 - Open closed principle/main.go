@@ -10,7 +10,7 @@ package main
 import "fmt"
 
 /*--------------------------------------------------------*/
-/*	     BREAKING OPEN/CLOSED PRINCIPLE	        */
+/*	     BREAKING OPEN/CLOSED PRINCIPLE	          */
 /*--------------------------------------------------------*/
 type CalculatorBad struct{}
 
@@ -23,7 +23,7 @@ func (c CalculatorBad) Calculate(a int, b int) int {
 }
 
 /*--------------------------------------------------------*/
-/*	     IMPLEMENTING OPEN/CLOSED PRINCIPLE	        */
+/*	     IMPLEMENTING OPEN/CLOSED PRINCIPLE	          */
 /*--------------------------------------------------------*/
 // Instead i will create ICalculator interface which has Execute signature method
 type ICalculator interface {
