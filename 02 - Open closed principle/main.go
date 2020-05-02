@@ -22,7 +22,9 @@ func (c CalculatorBad) Calculate(a int, b int) int {
 	return a + b
 }
 
-// Commented Example below shows how we break this principle by modifying existing Calculate function
+// Commented Example below shows how we break this principle by modifying existing Calculate function.
+// This is prone to errors because what if we are using Calculate() function in hundreds of files?
+// Definitely it will break our app because we have modified that function
 /*
 func (c CalculatorBad) Calculate(a int, b int, operation string) int {
 	if operation == "add" {
