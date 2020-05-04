@@ -80,4 +80,5 @@ func main() {
 
 	m2 := &MotorbikeGood{VehicleRun{"Kawsaki"}}
 	m2.Run()
+
 }
