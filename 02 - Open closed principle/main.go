@@ -12,6 +12,7 @@ import "fmt"
 /*--------------------------------------------------------*/
 /*	     BREAKING OPEN/CLOSED PRINCIPLE	          */
 /*--------------------------------------------------------*/
+
 type CalculatorBad struct{}
 
 // This Calculate function can ony do "+" operation against 2 numbers,
