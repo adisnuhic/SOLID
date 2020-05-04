@@ -63,6 +63,7 @@ func main() {
 	//eagle := &Bird{Animal{"Eagle"}}
 	//ImpossibleLiskovSubstitution(eagle) // Error: cannot use eagle (type *Bird) as type *Animal in argument to ImpossibleLiskovSubstitution
 
+	// This will work
 	wolf := &AnimalGood{"Wolf"}
 	PossibleLiskovSubstitution(wolf)
 	fmt.Println()
