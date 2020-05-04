@@ -69,5 +69,4 @@ func main() {
 	fmt.Println()
 	owl := &BirdGood{AnimalGood{"Owl"}}
 	PossibleLiskovSubstitution(owl)
-
 }
