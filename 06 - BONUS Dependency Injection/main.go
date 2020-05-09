@@ -15,12 +15,12 @@ import (
 	class, instead take it as a constructor parameter. It decouples your class/struct
 	construction from construction of your dependency.
 
-	Dependency Injection as a form of inversion of control. Inversion of Control (IoC) means that objects do not create
+	Dependency Injection is a form of inversion of control. Inversion of Control (IoC) means that objects do not create
 	other objects on which they rely to do their work. Instead, they get the objects that they need from an outside source.
 */
 
 /*--------------------------------------------------------*/
-/*		 				WRONG WAY	          		    */
+/*			WRONG WAY   		          */
 /*--------------------------------------------------------*/
 type Print struct{}
 
@@ -50,7 +50,7 @@ func (Print) PrintData() {
 }
 
 /*--------------------------------------------------------*/
-/*		 				GOOD WAY	          		    */
+/*	                GOOD WAY	          	  */
 /*--------------------------------------------------------*/
 // http.Client will implicitly satisfy our IHttpClient interface because http.Client implements Get method with the same signature
 type IHttpClient interface {
