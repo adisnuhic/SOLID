@@ -14,6 +14,9 @@ import (
 	that your class needs in order to function. You should not instantiate dependency in your
 	class, instead take it as a constructor parameter. It decouples your class/struct
 	construction from construction of your dependency.
+
+	Dependency Injection as a form of inversion of control. Inversion of Control (IoC) means that objects do not create
+	other objects on which they rely to do their work. Instead, they get the objects that they need from an outside source.
 */
 
 /*--------------------------------------------------------*/
@@ -56,7 +59,8 @@ type IHttpClient interface {
 
 type PrintGood struct{}
 
-// We can easily mock IHttpClient
+// We can easily mock IHttpClient.
+// So our PrintDataGood do not control cretion of http Client, it is controlled outside of the function (IoC)
 func (PrintGood) PrintDataGood(client IHttpClient, url string) {
 	response, err := client.Get(url)
 	if err != nil {
@@ -74,6 +78,11 @@ func (PrintGood) PrintDataGood(client IHttpClient, url string) {
 
 	fmt.Println(string(body))
 }
+
+/*
+	Notice: Here in function PrintDataGood i am using interface instead of http.Client struct so we
+	satisfy Dependency Inversion principle.. But i could pass http.Client also and it will still be Dependency Injection
+*/
 
 func main() {
 	// Running bad example
