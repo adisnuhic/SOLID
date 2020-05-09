@@ -94,5 +94,4 @@ func main() {
 	p2 := &PrintGood{}
 	client := http.Client{}
 	p2.PrintDataGood(&client, "http://google.com")
-
 }
