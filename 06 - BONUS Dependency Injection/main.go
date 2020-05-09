@@ -1,10 +1,12 @@
 package main
 
-import "net/http"
+import (
+	"net/http"
 
-import "fmt"
+	"fmt"
 
-import "io/ioutil"
+	"io/ioutil"
+)
 
 /*
 	Definition:
