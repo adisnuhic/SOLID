@@ -11,7 +11,7 @@ import (
 /*
 	Definition:
 	The literal meaning is to inject dependency. Dependency is just another object
-	that your class needs in order to function. You should not instantiate dependency in your
+	that your class/struct needs in order to function. You should not instantiate dependency in your
 	class, instead take it as a constructor parameter. It decouples your class/struct
 	construction from construction of your dependency.
 
@@ -52,7 +52,7 @@ func (Print) PrintData() {
 /*--------------------------------------------------------*/
 /*		 				GOOD WAY	          		    */
 /*--------------------------------------------------------*/
-// http.Client will implicitly satisfy our IHttpClient interface because they both have the same signature - Get methods
+// http.Client will implicitly satisfy our IHttpClient interface because http.Client implements Get method with the same signature
 type IHttpClient interface {
 	Get(string) (*http.Response, error)
 }
